@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Godot FPS"
+config/name="Working Godo FPS"
 run/main_scene="res://Main_Menu.tscn"
 config/icon="res://FPS_project_icon.png"
 
@@ -29,8 +29,12 @@ gdscript/warnings/enable=false
 
 [display]
 
-window/size/width=1280
-window/size/height=720
+window/size/width=1920
+window/size/height=1080
+window/size/fullscreen=true
+window/size/test_width=1920
+window/size/test_height=1080
+window/vsync/use_vsync=false
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -205,5 +209,8 @@ change_grenade={
 
 [rendering]
 
-quality/filters/msaa=2
+quality/subsurface_scattering/quality=2
+quality/subsurface_scattering/scale=4
+quality/voxel_cone_tracing/high_quality=true
+quality/filters/msaa=4
 environment/default_environment="res://default_env.tres"

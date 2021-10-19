@@ -5,10 +5,10 @@ export (int, "full size", "small") var kit_size = 0 setget kit_size_change
 
 # The amount of health each pickup in each size contains
 # 0 = full size pickup, 1 = small pickup
-const HEALTH_AMOUNTS = [70, 30]
+const HEALTH_AMOUNTS = [120, 30]
 
 # The length of time (in seconds) it will take for the pickup to respawn
-const RESPAWN_TIME = 20
+const RESPAWN_TIME = 10
 # A variable for tracking how much respawn time has passed
 var respawn_timer = 0
 

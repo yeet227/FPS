@@ -20,23 +20,22 @@ const SPRINT_ACCEL = 18
 var is_sprinting = false
 
 # How fast we slow down, and the steepest angle that counts as a floor (to the KinematicBody).
-const DEACCEL= 16
+const DEACCEL= 26
 const MAX_SLOPE_ANGLE = 40
 
 # The camera and the rotation helper.
 # We need the camera to get its directional vectors.
-#We rotate ourselves on the Y-axis using the rotation_helper to avoid rotating on more than one axis at a time.
 var camera
 var rotation_helper
 
 # The sensitivity of the mouse
 # (Higher values equals faster movements with the mouse. Lower values equals slower movements with the mouse)
 # (You may need to adjust depending on the sensitivity of your mouse)
-var MOUSE_SENSITIVITY = 0.05
+var MOUSE_SENSITIVITY = 0.5
 # The value of the scroll wheel (relative to our current weapon)
-var mouse_scroll_value = 0
+var mouse_scroll_value = 3
 # How much a single scroll action increases mouse_scroll_value
-const MOUSE_SENSITIVITY_SCROLL_WHEEL = 0.08
+const MOUSE_SENSITIVITY_SCROLL_WHEEL = 0.8
 
 # The sensitivity of the joypad's joysticks.
 # (Higher values equals faster movements with the mouse. Lower values equals slower movements with the mouse)
@@ -65,11 +64,11 @@ var changing_weapon_name = "UNARMED"
 var reloading_weapon = false
 
 # The amount of health we currently have
-var health = 100
+var health = 130
 # The amount of health we have when fully healed
-const MAX_HEALTH = 150
+const MAX_HEALTH = 200
 # The amount of time (in seconds) required to respawn
-const RESPAWN_TIME = 4
+const RESPAWN_TIME = 5
 # A variable to track how long we've been dead
 var dead_time = 0
 # A variable to track whether or not we are currently dead
@@ -93,14 +92,14 @@ var current_grenade = "Grenade"
 var grenade_scene = preload("res://Grenade.tscn")
 var sticky_grenade_scene = preload("res://Sticky_Grenade.tscn")
 # The amount of force we throw the grenades at
-const GRENADE_THROW_FORCE = 50
+const GRENADE_THROW_FORCE = 70
 
 # The object we currently have grabbed
 var grabbed_object = null
 # The amount of force we throw grabbed objects at
-const OBJECT_THROW_FORCE = 120
+const OBJECT_THROW_FORCE = 140
 # The distance we hold grabbed objects at
-const OBJECT_GRAB_DISTANCE = 7
+const OBJECT_GRAB_DISTANCE = 8
 # The distance of our grabbing raycast
 const OBJECT_GRAB_RAY_DISTANCE = 10
 
@@ -628,7 +627,7 @@ func process_respawn(delta):
 		# Disable our collision shapes
 		$Body_CollisionShape.disabled = true
 		$Feet_CollisionShape.disabled = true
-		# change our weapon to UNARMED
+		# change our weapon to unarmed
 		changing_weapon = true
 		changing_weapon_name = "UNARMED"
 		# Enable the death UI
@@ -636,9 +635,9 @@ func process_respawn(delta):
 		# Disable the other UI
 		$HUD/Panel.visible = false
 		$HUD/Crosshair.visible = false
-		# Wait to respawn
+		# Respawn Time
 		dead_time = RESPAWN_TIME
-		# Set is_dead, so we know we are dead
+		# is dead should be set to false so the game doesn't read you are dead
 		is_dead = true
 		
 		# If we are holding an object, then let it go
@@ -680,7 +679,7 @@ func process_respawn(delta):
 				if weapon_node != null:
 					weapon_node.reset_weapon()
 			# Reset our health
-			health = 100
+			health = 180
 			# Reset our grenades
 			grenade_amounts = {"Grenade":2, "Sticky Grenade":2}
 			current_grenade = "Grenade"

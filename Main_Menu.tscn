@@ -83,9 +83,12 @@ anims/Background_Animation = SubResource( 3 )
 
 [node name="Start_Menu" type="Panel" parent="."]
 modulate = Color( 1, 1, 1, 0.901961 )
-margin_right = 330.0
-margin_bottom = 720.0
+margin_right = 345.0
+margin_bottom = 915.0
 custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Title_Label" type="Label" parent="Start_Menu"]
 margin_left = 20.0
@@ -97,10 +100,13 @@ custom_fonts/font = SubResource( 5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
-text = "Godot 3
-FPS Tutorial"
+text = "Future
+State"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button_Start" type="Button" parent="Start_Menu"]
 anchor_left = 0.5
@@ -124,7 +130,7 @@ margin_top = -190.0
 margin_right = 155.0
 margin_bottom = -140.0
 custom_fonts/font = SubResource( 5 )
-text = "Open Godot website"
+text = "Open Google website"
 
 [node name="Button_Options" type="Button" parent="Start_Menu"]
 anchor_left = 0.5
@@ -153,8 +159,8 @@ text = "Quit"
 [node name="Level_Select_Menu" type="Panel" parent="."]
 visible = false
 modulate = Color( 1, 1, 1, 0.901961 )
-margin_right = 330.0
-margin_bottom = 720.0
+margin_right = 345.0
+margin_bottom = 915.0
 custom_styles/panel = SubResource( 4 )
 
 [node name="Title_Label" type="Label" parent="Level_Select_Menu"]
@@ -246,9 +252,12 @@ expand = true
 [node name="Options_Menu" type="Panel" parent="."]
 visible = false
 modulate = Color( 1, 1, 1, 0.901961 )
-margin_right = 330.0
-margin_bottom = 720.0
+margin_right = 345.0
+margin_bottom = 915.0
 custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Title_Label" type="Label" parent="Options_Menu"]
 margin_left = 20.0
